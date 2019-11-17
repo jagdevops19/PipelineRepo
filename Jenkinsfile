@@ -18,8 +18,8 @@ pipeline {
      stage ('Checkout2'){
      steps {
      sh 'echo hellohello'
-
-      echo "Inside Stage Checkout2"
+     echo "Inside Stage Checkout2"
+     sh 'git clone https://github.com/jagdevops19/jenkinsscripts.git'
       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions:[], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GIT_CREDS', url: 'https://github.com/jagdevops19/jenkinsscripts.git']]])
        }
       }
