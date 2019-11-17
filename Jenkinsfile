@@ -20,7 +20,7 @@ pipeline {
      sh 'echo hellohello'
      echo "Inside Stage Checkout2"
      git 'https://github.com/jagdevops19/PipelineRepo.git'
-     sh ls
+     sh 'ls'
       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions:[], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GIT_CREDS', url: 'https://github.com/jagdevops19/jenkinsscripts.git']]])
        }
       }
