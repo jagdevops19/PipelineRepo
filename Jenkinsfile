@@ -17,6 +17,7 @@ pipeline {
         stages {   
      stage ('Checkout2'){
      steps {
+     sh 'echo' hellohello
       echo "Inside Stage Checkout2"
       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions:[], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GIT_CREDS', url: 'https://github.com/jagdevops19/jenkinsscripts.git']]])
        }
